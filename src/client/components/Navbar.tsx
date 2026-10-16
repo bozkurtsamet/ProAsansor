@@ -1,6 +1,7 @@
 import "../css/Navbar.css";
 import { FaInstagram, FaFacebookF, FaWhatsapp, FaPhone } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import ProAsansorIcon from "../assets/ProAsansorIcon.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -9,14 +10,15 @@ function Navbar() {
   };
   return (
     <nav className="navbar">
-      <div className="navbar-logo">ProAsansor</div>
-
+      <div className="navbar-logo">
+        <img src={ProAsansorIcon} alt="ProAsansorIcon" />
+      </div>
       <div className="navbar-links">
-        <a onClick={() => navigate("/")}>Home</a>
-        <a onClick={() => navigate("/services")}>Services</a>
-        <a onClick={() => navigate("/gallery")}>Gallery</a>
-        <a onClick={() => navigate("/about")}>About</a>
-        <a onClick={() => navigate("/contact")}>Contact</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div className="navbar-contact">

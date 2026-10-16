@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+.SliderSection {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.SliderSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(5, 20, 40, 0.98) 0%,
+    rgba(8, 32, 58, 0.9) 25%,
+    rgba(15, 50, 80, 0.65) 40%,
+    rgba(30, 75, 110, 0.35) 52%,
+    rgba(50, 100, 140, 0) 65%
+  );
+
+  z-index: 1;
+}
+
+.SliderSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#leftbutton,
+#rightbutton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#leftbutton {
+  left: 20px;
+  color: rgba(239, 221, 239, 0.7);
+}
+
+#rightbutton {
+  right: 20px;
+  color: rgba(239, 221, 239, 0.7);
+}
+
+.SliderContent {
+  padding: 5px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1px;
+  position: absolute;
+  left: 7%;
+  z-index: 1;
+}
+
+.SliderDots {
+  position: absolute;
+  z-index: 1;
+  bottom: 1rem;
+}
+.SliderDots button {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.SliderDots button.active {
+  background-color: red;
+}
